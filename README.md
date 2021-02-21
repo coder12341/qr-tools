@@ -12,5 +12,7 @@ QR-Code Scanner and Generator
 >qr_reader_live.py
 >
 
-- [x] Make build for Linux
+### Download
+[Realeases](https://github.com/coder12341/qr-tools/releases)
+- [ ] Make build for Linux
 - [ ] Make build for Windows
