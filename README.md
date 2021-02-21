@@ -11,3 +11,6 @@ QR-Code Scanner and Generator
 ### Read qr (live)
 >qr_reader_live.py
 >
+
+[]Make build for Windows
+[x]Make build for Linux
