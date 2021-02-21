@@ -13,6 +13,6 @@ QR-Code Scanner and Generator
 >
 
 ### Download
-[Realeases](https://github.com/coder12341/qr-tools/releases)
+[Releases](https://github.com/coder12341/qr-tools/releases)
 - [ ] Make build for Linux
 - [ ] Make build for Windows
