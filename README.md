@@ -21,7 +21,6 @@ qr_reader.py -i qr.png
 qr_reader_live.py
 ```
 
-### Download
-#### [Releases](https://github.com/coder12341/qr-tools/releases)
+### [Download](https://github.com/coder12341/qr-tools/releases)
 
 [QR Generator(for WIndows)](https://github.com/coder12341/qr-tools/releases)
