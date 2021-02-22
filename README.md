@@ -1,4 +1,4 @@
-# ![icon](icon.png) qr-tools
+# ![icon](icon.png) QR-Tools
 QR-Code Scanner and Generator
 
 ## Scan and generate qr-codes easily
