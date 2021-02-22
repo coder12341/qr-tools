@@ -2,6 +2,10 @@
 QR-Code Scanner and Generator
 
 ## Scan and generate qr-codes easily
+#### Install Required libraries
+```
+pip3 install pyzbar imutils opencv-python 
+```
 ### Generate qr
 ```
 qr_generator.py -t 'Some Text' [-l logo.png] [--qrversion 1] [--boxsize 10] [--border 4] [--background white] [--foreground black] [--help]
