@@ -58,12 +58,12 @@ while True:
 			print('WIFI with SSID:\'{}\' PASSWORD:\'{}\' ENCRYPTION:{} HIDDEN:{}'.format(ssid[0], passwd[0], encryption[0], hidden[0]))
 			connect=input("Connect to this wifi network now?(Y/n):")
 			if connect.lower()=='y':
-    			try:
-				from wireless import wireless
-				wire = Wireless()
-				wire.connect(ssid=str(ssid[0]), password=str(passwd[0]))
-			except:
-				print(['[!]An error occured.\nAborting...'])
+    				try:
+					from wireless import wireless
+					wire = Wireless()
+					wire.connect(ssid=str(ssid[0]), password=str(passwd[0]))
+				except:
+					print(['[!]An error occured.\nAborting...'])
 
 		elif 'SMS' in barcodeData:
 			sms=barcodeData.split(':')
