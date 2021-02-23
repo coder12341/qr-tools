@@ -4,7 +4,7 @@ QR-Code Scanner and Generator-By K*** P***
 ## Scan and generate qr-codes easily
 ### Install Required libraries
 ```
-pip3 install pyzbar imutils opencv-python Pillow qrcode
+pip3 install pyzbar imutils opencv-python Pillow qrcode wireless
 ```
 ### Generate qr
 ```
