@@ -30,4 +30,4 @@ qr_reader_live.py
 > QR Generator(for MacOS_X), coming soon!
 > 
 
-/ QR Generator(for MacOS_X), coming soon!
+__QR Generator(for MacOS_X), coming soon!__
