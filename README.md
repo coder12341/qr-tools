@@ -1,5 +1,5 @@
 # ![icon](icon.png) QR-Tools
-QR-Code Scanner and Generator-By K*** P***
+QR-Code Scanner and Generator
 
 ## Scan and generate qr-codes easily
 ### Install Required libraries
