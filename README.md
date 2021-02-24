@@ -27,5 +27,5 @@ qr_reader_live.py
 
 [QR Generator(for Linux_x64)](https://github.com/coder12341/qr-tools/releases/download/1.0/qr_generator_deb_x64)
 
-> QR Generator(for MacOS X_x64), coming soon!
+> QR Generator(for MacOS_x64), coming soon!
 > 
