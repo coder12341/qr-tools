@@ -1,0 +1,6 @@
+pyzbar
+imutils
+opencv-python
+Pillow
+qrcode
+wireless
