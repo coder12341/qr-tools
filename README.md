@@ -33,6 +33,6 @@ qr_reader_live.py
 
 [QR Generator(for Linux_x64_graphical)](https://github.com/coder12341/qr-tools/releases/download/1.0/qr_generator_linux_x64.graphical.zip)
 
-[QR Generator(for Raspberry pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/1.0/qr_generator_linux_armhf)
+[QR Generator(for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/1.0/qr_generator_linux_armhf)
 
 [QR Generator(for Raspberry_pi_armhf_graphical](https://github.com/coder12341/qr-tools/releases/download/1.0/qr_generator_linux_armhf.graphical.zip)
