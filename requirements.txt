@@ -4,3 +4,4 @@ opencv-python
 Pillow
 qrcode
 wireless
+PyQt5
