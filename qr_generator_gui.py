@@ -73,14 +73,14 @@ class Ui(QtWidgets.QMainWindow):
             self.filename=self.out_name.text()
         else:
             self.filename='False'
-        generator.generate_email(self.to_email.text(), self.subject.text(), self.email_message.toPlainText(), self.qrversion.currentText(), self.boxsize.value(), self.border.value(), self.fg.currentText(), self.bg.currentText(), self.filename)
+        generator.generate_email(self.to_email.text(), self.subject.text(), self.email_message.toPlainText(), self.qrversion.currentText(), self.boxsize.value(), self.border.value(), self.fg.currentText(), self.bg.currentText(), self.logo_file, self.filename)
     
     def generate_sms(self):
         if self.out_name.text():
             self.filename=self.out_name.text()
         else:
             self.filename='False'
-        generator.generate_sms(self.to_phone.text(), self.sms_message.toPlainText(), self.qrversion.currentText(), self.boxsize.value(), self.border.value(), self.fg.currentText(), self.bg.currentText(), self.filename)
+        generator.generate_sms(self.to_phone.text(), self.sms_message.toPlainText(), self.qrversion.currentText(), self.boxsize.value(), self.border.value(), self.fg.currentText(), self.bg.currentText(), self.logo_file, self.filename)
 
     def generate_wifi(self):
         if self.out_name.text():
@@ -92,14 +92,14 @@ class Ui(QtWidgets.QMainWindow):
             hidden_='true'
         else:
             hidden_='false'
-        generator.generate_wifi(self.ssid.text(), self.passwd.text(), self.encryption.currentText(), hidden_, self.qrversion.currentText(), self.boxsize.value(), self.border.value(), self.fg.currentText(), self.bg.currentText(), self.filename)
+        generator.generate_wifi(self.ssid.text(), self.passwd.text(), self.encryption.currentText(), hidden_, self.qrversion.currentText(), self.boxsize.value(), self.border.value(), self.fg.currentText(), self.bg.currentText(), self.logo_file, self.filename)
     
     def generate_contact_details(self):
         if self.out_name.text():
             self.filename=self.out_name.text()
         else:
             self.filename='False'
-        generator.generate_contact_details(self.name.text(), self.org.text(), self.tel.text(), self.email.text(), self.cell.text(), self.fax.text(), self.street.text(), self.city.text(), self.region.text(), self.postcode.text(), self.country.text(), self.url.text, self.qrversion.currentText(), self.boxsize.value(), self.border.value(), self.fg.currentText(), self.bg.currentText(), self.filename)
+        generator.generate_contact_details(self.name.text(), self.org.text(), self.tel.text(), self.email.text(), self.cell.text(), self.fax.text(), self.street.text(), self.city.text(), self.region.text(), self.postcode.text(), self.country.text(), self.url.text, self.qrversion.currentText(), self.boxsize.value(), self.border.value(), self.fg.currentText(), self.bg.currentText(), self.logo_file, self.filename)
 
     def choose_logo(self):
         
