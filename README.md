@@ -1,7 +1,7 @@
 # ![icon](icon.png) QR-Tools
 QR-Code Scanner and Generator
 
->More features coming soon!(Next release coming on 3/17/2021)
+>More features coming soon!(Next release coming on 3/20/2021)
 >
 
 ## Scan and generate qr-codes easily
