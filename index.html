@@ -7,6 +7,7 @@
 <head>
 
     <title>QR Tools</title>
+	
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"           content="width=700">
@@ -32,7 +33,16 @@
     <script src="scrollmagic/minified/plugins/animation.gsap.min.js"></script>
     <script src="scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
     <script src="assets/js/demo.js"></script>
-
+    <script>
+    	var txt;
+  	var r = confirm("Press a button!");
+  	if (r == true) {
+    	txt = "You pressed OK!";
+  	} else {
+    	txt = "You pressed Cancel!";
+ 	}
+  	document.getElementById("demo").innerHTML = txt;
+   </script>
 </head>
 <body>
     <a id="github-ribbon" href="https://github.com/coder12341/qr-tools" target='_blank'><img src="https://github-camo.global.ssl.fastly.net/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
