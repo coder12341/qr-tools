@@ -16,7 +16,7 @@ class generator():
             img = qr.make_image(fill_color=fg, back_color=bg).convert('RGB')
             if logo != 'False':
                 logo_display = Image.open(logo)
-                logo_display.thumbnail((60, 60))
+                logo_display.thumbnail((logo_x, logo_y))
                 logo_pos = ((img.size[0] - logo_display.size[0]) // 2, (img.size[1] - logo_display.size[1]) // 2)
                 img.paste(logo_display, logo_pos)
             if output != 'False':
@@ -42,7 +42,7 @@ class generator():
             img = qr.make_image(fill_color=fg, back_color=bg).convert('RGB')
             if logo != 'False':
                 logo_display = Image.open(logo)
-                logo_display.thumbnail((60, 60))
+                logo_display.thumbnail((logo_x, logo_y))
                 logo_pos = ((img.size[0] - logo_display.size[0]) // 2, (img.size[1] - logo_display.size[1]) // 2)
                 img.paste(logo_display, logo_pos)
             if output != 'False':
@@ -68,7 +68,7 @@ class generator():
             img = qr.make_image(fill_color=fg, back_color=bg).convert('RGB')
             if logo != 'False':
                 logo_display = Image.open(logo)
-                logo_display.thumbnail((60, 60))
+                logo_display.thumbnail((logo_x, logo_y))
                 logo_pos = ((img.size[0] - logo_display.size[0]) // 2, (img.size[1] - logo_display.size[1]) // 2)
                 img.paste(logo_display, logo_pos)
             if output !='False':
@@ -120,7 +120,7 @@ class generator():
             img = qr.make_image(fill_color=fg, back_color=bg).convert('RGB')
             if logo != 'False':
                 logo_display = Image.open(logo)
-                logo_display.thumbnail((60, 60))
+                logo_display.thumbnail((logo_x, logo_y))
                 logo_pos = ((img.size[0] - logo_display.size[0]) // 2, (img.size[1] - logo_display.size[1]) // 2)
                 img.paste(logo_display, logo_pos)
             if output != 'False':
@@ -141,12 +141,12 @@ class generator():
             error_correction=qrcode.constants.ERROR_CORRECT_H,
             box_size=boxsize,
             border=border)
-            qr.add_data('BEGIN:VEVENT\nSUMMURY:%s\nLOCATION:%s\nDTSTART:%s\nDTEND:%s\nEND:VEVENT\n'%(title, location, start_time, end_time))
+            qr.add_data('BEGIN:VEVENT\nSUMMARY:%s\nLOCATION:%s\nDTSTART:%s\nDTEND:%s\nEND:VEVENT\n'%(title, location, start_time, end_time))
             qr.make(fit=True)
             img = qr.make_image(fill_color=fg, back_color=bg).convert('RGB')
             if logo != 'False':
                 logo_display = Image.open(logo)
-                logo_display.thumbnail((60, 60))
+                logo_display.thumbnail((logo_x, logo_y))
                 logo_pos = ((img.size[0] - logo_display.size[0]) // 2, (img.size[1] - logo_display.size[1]) // 2)
                 img.paste(logo_display, logo_pos)
             if output != 'False':
