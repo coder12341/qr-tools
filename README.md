@@ -30,7 +30,7 @@ python3 qr_reader_live.py
 
 [QR Generator Graphical(for Windows_x64_installer)](https://github.com/coder12341/qr-tools/releases/download/v2.0/QR.Generator.setup_win_x64.exe)
 
-[QR Generator Cli(for Linux_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_x64)
+[QR Generator cli(for Linux_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_x64)
 
 [QR Generator Graphical(for Linux_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_linux_x64.tar.xz)
 
