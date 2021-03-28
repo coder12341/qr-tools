@@ -4,21 +4,21 @@ QR-Code Scanner and Generator
 ## Scan and generate qr-codes easily
 ### Install Required libraries
 ```
-pip3 install pyzbar imutils opencv-python Pillow qrcode wireless PyQt5
+pip3 install pyzbar imutils opencv-python Pillow qrcode wireless PyQt5 segno
 ```
 ### Generate qr
 ```
-qr_generator.py -t 'Some Text' [-l logo.png] [--qrversion 1] [--boxsize 10] [--border 4] [--background white] [--foreground black] [--help]
+python3 qr_generator.py -t 'Some Text' [-l logo.png] [logo_width 60] [logo_width 60] [--micro] [--scale 10] [--qrversion 1] [--boxsize 10] [--border 4] [--background white] [--foreground black] [--help]
 ```
 
 ### Read qr from file
 ```
-qr_reader.py -i qr.png
+python3 qr_reader.py -i qr-code.png
 ```
 
 ### Read qr (live)
 ```
-qr_reader_live.py
+python3 qr_reader_live.py
 ```
 
 ### [Download Binaries](https://github.com/coder12341/qr-tools/releases)
@@ -30,8 +30,7 @@ qr_reader_live.py
 
 [QR Generator Graphical(for Windows_x64_installer)](https://github.com/coder12341/qr-tools/releases/download/v2.0/QR.Generator.setup_win_x64.exe)
 
->QR Generator(for Linux_x64) Coming soon!
->
+[QR Generator Cli(for Linux_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_x64)
 
 [QR Generator Graphical(for Linux_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_linux_x64.tar.xz)
 
