@@ -8,7 +8,7 @@ pip3 install pyzbar imutils opencv-python Pillow qrcode wireless PyQt5 segno
 ```
 ### Generate qr
 ```
-python3 qr_generator.py -t 'Some Text' [-l logo.png] [logo_width 60] [logo_width 60] [--micro] [--scale 10] [--qrversion 1] [--boxsize 10] [--border 4] [--background white] [--foreground black] [--help]
+python3 qr_generator.py -t 'Some Text' [-l logo.png] [-logo_width 60] [-logo_height 60] [--micro] [--scale 10] [--qrversion 1] [--boxsize 10] [--border 4] [--background white] [--foreground black] [--help]
 ```
 
 ### Read qr from file
