@@ -24,8 +24,7 @@ python3 qr_reader_live.py
 
 ### [Download Binaries](https://github.com/coder12341/qr-tools/releases)
 
->QR Generator(for Windows_x64) Coming soon!
->
+[QR Generator cli(for Windows_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_win_x64.exe)
 
 [QR Generator Graphical(for Windows_x64_portable)](https://github.com/coder12341/qr-tools/releases/download/v2.0/QR.Generator_portable_win_x64.zip)
 
