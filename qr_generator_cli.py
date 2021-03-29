@@ -1,4 +1,3 @@
-#Add ASCII Art
 import qrcode
 from PIL import Image
 import argparse
