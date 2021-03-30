@@ -38,7 +38,6 @@ python3 qr_reader_live.py
 
 [QR Generator Graphical(for Linux_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_linux_x64.tar.xz)
 
->QR Generator cli(for Raspberry_pi_armhf) Coming soon!
->
+[QR Generator cli(for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_rpi)
 
 [QR Generator Graphical(for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_rpi.tar.gz)
