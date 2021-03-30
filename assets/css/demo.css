@@ -46,6 +46,24 @@ li {
 	left: 0;
 	z-index: 999999999;
 }
+#platforms {
+	position: fixed;
+	top: 2;
+	left: 0;
+	z-index: 999999999;
+}
+#license {
+	position: fixed;
+	top: 4;
+	left: 0;
+	z-index: 999999999;
+}
+#language {
+	position: fixed;
+	top: 6;
+	left: 0;
+	z-index: 999999999;
+}
 #overlay {
 	position: fixed;
 	left: 0;
