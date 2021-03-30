@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/version-2.0-green)](https://github.com/Datalux/Osintgram/releases/tag/2.0)
+[![](https://img.shields.io/badge/license-GPLv3-blue)](https://img.shields.io/badge/license-GPLv3-blue)
+[![](https://img.shields.io/badge/language-Python3-red)](https://img.shields.io/badge/language-Python3-red)
 # ![icon](icon.png) QR-Tools
 QR-Code Scanner and Generator
 
