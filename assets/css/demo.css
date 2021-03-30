@@ -48,19 +48,19 @@ li {
 }
 #platforms {
 	position: fixed;
-	top: 2;
+	top: 0;
 	left: 0;
 	z-index: 999999999;
 }
 #license {
 	position: fixed;
-	top: 4;
+	top: 0;
 	left: 0;
 	z-index: 999999999;
 }
 #language {
 	position: fixed;
-	top: 6;
+	top: 0;
 	left: 0;
 	z-index: 999999999;
 }
