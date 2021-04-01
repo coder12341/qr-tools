@@ -13,8 +13,8 @@ pip3 install pyzbar imutils opencv-python Pillow qrcode wireless PyQt5 segno
 ### Generate qr
 ```
 python3 qr_generator.py -t 'Some Text' [-l logo.png] [-logo_width 60] [-logo_height 60] [--micro] [--scale 10] [--qrversion 1] [--boxsize 10] [--border 4] [--background white] [--foreground black] [--help]
-​```
-**If the dimesions of the logo you put are too large, your QR-Code might not be readable by scanners!**
+```
+**If the dimensions of the logo you put are too large, your QR-Code might not be readable by scanners!**
 
 ### Read qr from file
 ```
@@ -24,7 +24,8 @@ python3 qr_reader.py -i qr-code.png
 ### Read qr (live)
 ```
 python3 qr_reader_live.py
-​```
+```
+
 ### For Developers
 To make your own build, just paste the following commands into a terminal.
 
