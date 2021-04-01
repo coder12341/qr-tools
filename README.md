@@ -25,7 +25,7 @@ python3 qr_reader.py -i qr-code.png
 ​```
 python3 qr_reader_live.py
 ​```
-###For Developers
+### For Developers
 To make your own build, just paste the following commands into a terminal.
 ​```
 #Before pasting the commands make sure that you have python3 installed!
