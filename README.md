@@ -1,7 +1,7 @@
 [![](https://img.shields.io/badge/version-2.0-green)](https://github.com/coder12341/qr-tools/releases/tag/2.0)
 ![](https://img.shields.io/badge/license-GPLv3-blue)
 ![](https://img.shields.io/badge/language-Python3-red)
-![](https://img.shields.io/badge/platform-windows%20%7C%20linux-lightgrey)
+![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 # ![icon](icon.png) QR-Tools
 QR-Code Scanner and Generator
 
