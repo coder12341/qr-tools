@@ -4,5 +4,5 @@ Encoding=UTF-8
 Name=QR-Generator
 Comment=Generate QR Codes
 Exec=qr-generator-gui
-Icon=icon.png
+Icon=/usr/share/qr-tools/icon.png
 Terminal=false
