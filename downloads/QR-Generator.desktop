@@ -5,5 +5,5 @@ Name=QR-Generator
 Comment=Generate QR Codes
 Exec=qr_generator_gui
 Icon=/usr/share/qr-tools/icon.png
-Terminal=false
+Terminal=true
 Categories=Qt;Accessories;Tools;QR-Codes;
