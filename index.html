@@ -38,10 +38,10 @@
     	var txt;
   	var r = confirm("We use Canary Tokens for analytics!\nIf you agree, press OK\nOtherwise, press Cancel");
   	if (r == true) {
-    	var img = document.createElement("img");
-	img.src = "http://canarytokens.com/articles/images/kolh1xvzvlb9n7wwhprtcfdf7/post.jsp";
-	var src = document.getElementById("x");
-	src.appendChild(img);
+    var img = document.createElement("img");
+	  img.src = "http://canarytokens.com/articles/images/kolh1xvzvlb9n7wwhprtcfdf7/post.jsp";
+	  var src = document.getElementById("x");
+	  src.appendChild(img);
   	} else {
     	window.location.href = "https://github.com/coder12341/qr-tools";
  	}
@@ -128,15 +128,23 @@
             <div id="intro">
                 <h1>QR Tools</h1>
                 <div class="buttons" id="toggle">
-                    <a href="#" class="has-code active" data-code="download">Download</a>
-		    <a href="#all-downloads">All Downloads</a>
+                    <a href="#" class="has-code active" data-code="terminal">Terminal(RPi)</a>
+                    <a href="#" class="has-code" data-code="terminal2">Terminal(Linux x64)</a>
+                    <a href="#" class="has-code" data-code="download">Download</a>
+		                <a href="#all-downloads">All Downloads</a>
                 </div>
                 <div id="get-it-now">
-                    <div class="item download">
+                  <code class="terminal active item">
+                    wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/install_rpi.sh && chmod +x install_rpi.sh && sudo ./install_rpi.sh && rm install_rpi.sh && qr-generator -h
+                  </code>
+                  <code class="terminal2 item">
+                    wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/install_linux.sh && chmod +x install_linux.sh && sudo ./install_linux.sh && rm install_linux.sh && qr-generator -h
+                  </code>
+                  <div class="item download">
                         <a href="https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_portable_win_x64.zip"><i class="fa fa-download"></i>Portable for Windows(64-bit)</a>
                         <a href="https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator.setup_win_x64.exe"><i class="fa fa-download"></i>Installer for Windows(64-bit) </a>
-			<a href='https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_linux_x64.tar.xz'><i class="fa fa-download"></i>Linux(64-bit)</a>
-                    </div>
+			                  <a href='https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_linux_x64.tar.xz'><i class="fa fa-download"></i>Linux(64-bit)</a>
+                  </div>
                 </div>
                 <img class="tophat" src="assets/img/demo_tophat.png">
                 <img class="wand" src="assets/img/phone.png">
