@@ -9,12 +9,12 @@ QR-Code Scanner and Generator
 ### Install Required libraries
 ```
 pip3 install pyzbar imutils opencv-python Pillow qrcode wireless PyQt5 segno
-```
+​```
 
 ### Generate qr
 ```
 python3 qr_generator.py -t 'Some Text' [-l logo.png] [-logo_width 60] [-logo_height 60] [--micro] [--scale 10] [--qrversion 1] [--boxsize 10] [--border 4] [--background white] [--foreground black] [--help]
-```
+​```
 **If the dimensions of the logo you put are too large, your QR-Code might not be readable by scanners!**
 
 
@@ -22,7 +22,7 @@ python3 qr_generator.py -t 'Some Text' [-l logo.png] [-logo_width 60] [-logo_hei
 ### Read qr from file
 ```
 python3 qr_reader.py -i qr-code.png
-```
+​```
 
 
 
@@ -30,7 +30,7 @@ python3 qr_reader.py -i qr-code.png
 
 ```
 python3 qr_reader_live.py
-```
+​```
 
 
 
@@ -45,7 +45,7 @@ cd qr-tools
 pip3 install -r requirements.txt #Install the required libraries
 pip3 install pyinstaller
 pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
-```
+​```
 
 
 
@@ -64,3 +64,22 @@ pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 [QR Generator cli(for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_rpi)
 
 [QR Generator Graphical(for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_rpi.tar.gz)
+
+
+
+### Terminal installation(Linux only)
+
+Open a terminal and paste the following commands.
+
+**Raspberry Pi**
+
+```bash
+wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/install_rpi.sh && chmod +x install_rpi.sh && sudo ./install_rpi.sh && rm install_rpi.sh && qr-generator -h
+```
+
+**Linux (x64)**
+
+```bash
+wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/install_linux.sh && chmod +x install_linux && sudo ./install_linux.sh && rm install_linux.sh && qr-generator -h
+```
+
