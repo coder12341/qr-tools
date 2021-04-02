@@ -29,7 +29,7 @@ python3 qr_reader.py -i qr-code.png
 ### Read qr (live)
 
 ```
-python3 r_live.py
+python3 qr_reader_live.py
 ```
 
 
