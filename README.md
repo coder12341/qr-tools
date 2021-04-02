@@ -39,7 +39,7 @@ python3 qr_reader_live.py
 To make your own build, just paste the following commands into a terminal.
 
 ``` bash
-#Before pasting the commands make sure that you have python3 installed!
+#Before pasting the commands make sure that you have python3 and pip3 installed!
 git clone https://github.com/coder12341/qr-tools.git #Download the source code
 cd qr-tools
 pip3 install -r requirements.txt #Install the required libraries
