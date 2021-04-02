@@ -81,6 +81,6 @@ wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/ins
 **Linux (x64)**
 
 ```bash
-wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/install_linux.sh && chmod +x install_linux && sudo ./install_linux.sh && rm install_linux.sh && qr-generator -h
+wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/install_linux.sh && chmod +x install_linux.sh && sudo ./install_linux.sh && rm install_linux.sh && qr-generator -h
 ```
 
