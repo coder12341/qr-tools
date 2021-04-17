@@ -85,39 +85,5 @@ wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/ins
 ```
 
 ### File hashes (SHA256)
-- qr-generator-cli_linux_x64
-``` 
-597870fd7779f4cf2446bd6bd04eba4cd3acbfdb79032a244b55abccfc143fb4
-```
-
-- qr-generator-cli_rpi
-```
-fe80b0bdfcd7d851b4c318f61b730a3327700b59c869cc5d007479fecf9e8ab2
-```
-
-- qr-generator-cli_win_x64.exe
-```
-23de331dcbcf5e2274c6a5b2b3c33b342dfa0654a3d9e4d672f61731a5f6f205
-```
-
-- QR.Generator.setup_win_x64.exe
-```
-0f19ef6544d75032c514ba5cce741060acb41ac02e89d27ae7e32be476e5a61d
-```
-
-- QR.Generator_linux_x64.tar.xz
-```
-edad67aa894997e36471893a45bc0ae77a28acad13614dc5c90fe146a7d150dc
-```
-
-- QR.Generator_portable_win_x64.zip
-```
-72ed900973174cbc22dfafedf91da7cb3f7db96c72f78b48163fea51fa0e2144
-```
-
-- QR.Generator_rpi.tar.gz
-```
-d56ad7f4ab65c0d3f47d0018679452a6643b036401783c55a80fd56bcd841293
-```
-
+You can find the file hashes in the [releases section](https://github.com/coder12341/qr-tools/releases/tag/2.0)
 
