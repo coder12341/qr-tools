@@ -534,9 +534,3 @@ html {
 	font-size: 9px;
 	line-height: 1;
 }
-
-.container {
-	display: flex;
-        align-items: center;
-        justify-content: center
-}
