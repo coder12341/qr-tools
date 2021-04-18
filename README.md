@@ -1,13 +1,15 @@
-[![](https://img.shields.io/badge/version-2.0-green)](https://github.com/coder12341/qr-tools/releases/tag/2.0)
-![](https://img.shields.io/badge/license-GPLv3-blue)
-![](https://img.shields.io/badge/language-Python3-red)
-![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
+<p align="center">
+  [![](https://img.shields.io/badge/version-2.0-green)](https://github.com/coder12341/qr-tools/releases/tag/2.0)
+  ![](https://img.shields.io/badge/license-GPLv3-blue)
+  ![](https://img.shields.io/badge/language-Python3-red)
+  ![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
+</p>
 
 <p align="center">
   <img src="icon.png">
 </p>
 <h1 align="center">QR-Tools</h1>
-<p align="center" font-size=80px>QR-Code Scanner and Generator</p><br>
+<p align="center">QR-Code Scanner and Generator</p><br>
 
 ## Scan and generate qr-codes easily
 ### Install Required libraries
@@ -72,6 +74,7 @@ pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 
 
 <br>
+
 ### Terminal installation(Linux only)
 
 Open a terminal and paste the following commands.
