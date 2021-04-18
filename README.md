@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 
 # QR-Tools
-A collection of tools to read and generate QR-Coes
+A collection of tools to read and generate QR-Codes
 
 <br>
 
