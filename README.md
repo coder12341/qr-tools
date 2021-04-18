@@ -1,15 +1,12 @@
-<p align="center">
-  [![](https://img.shields.io/badge/version-2.0-green)](https://github.com/coder12341/qr-tools/releases/tag/2.0)
-  ![](https://img.shields.io/badge/license-GPLv3-blue)
-  ![](https://img.shields.io/badge/language-Python3-red)
-  ![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
-</p>
+[![](https://img.shields.io/badge/version-2.0-green)](https://github.com/coder12341/qr-tools/releases/tag/2.0)
+![](https://img.shields.io/badge/license-GPLv3-blue)
+![](https://img.shields.io/badge/language-Python3-red)
+![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 
-<p align="center">
-  <img src="icon.png">
-</p>
-<h1 align="center">QR-Tools</h1>
-<p align="center">QR-Code Scanner and Generator</p><br>
+# QR-Tools
+A collection of tools to read and generate QR-Coes
+
+<br>
 
 ## Scan and generate qr-codes easily
 ### Install Required libraries
@@ -38,7 +35,6 @@ python3 qr_reader.py -i qr-code.png
 python3 qr_reader_live.py
 ```
 <br>
-
 
 ### For Developers
 
