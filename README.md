@@ -1,15 +1,15 @@
 <p align="center">
   <img src="icon.png">
-  <h1>QR-Tools</h1>
 </p>
-
+<h1 align="center">QR-Tools</h1>
+<h4 align="center">QR-Code Scanner and Generator</h4>
 
 [![](https://img.shields.io/badge/version-2.0-green)](https://github.com/coder12341/qr-tools/releases/tag/2.0)
 ![](https://img.shields.io/badge/license-GPLv3-blue)
 ![](https://img.shields.io/badge/language-Python3-red)
 ![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 
-QR-Code Scanner and Generator
+
 
 ## Scan and generate qr-codes easily
 ### Install Required libraries
