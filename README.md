@@ -7,7 +7,7 @@
   <img src="icon.png">
 </p>
 <h1 align="center">QR-Tools</h1>
-<h3 align="center">QR-Code Scanner and Generator</h3><br>
+<p align="center">QR-Code Scanner and Generator</p><br>
 
 ## Scan and generate qr-codes easily
 ### Install Required libraries
