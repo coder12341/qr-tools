@@ -7,7 +7,7 @@
   <img src="icon.png">
 </p>
 <h1 align="center">QR-Tools</h1>
-<p align="center">QR-Code Scanner and Generator</p><br>
+<p align="center" font-size=80px>QR-Code Scanner and Generator</p><br>
 
 ## Scan and generate qr-codes easily
 ### Install Required libraries
@@ -35,7 +35,7 @@ python3 qr_reader.py -i qr-code.png
 ```
 python3 qr_reader_live.py
 ```
-
+<br>
 
 
 ### For Developers
@@ -51,7 +51,7 @@ pip3 install pyinstaller
 pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 ```
 
-
+<br>
 
 ### [Download Binaries](https://github.com/coder12341/qr-tools/releases)
 
@@ -71,7 +71,7 @@ pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 
 
 
-
+<br>
 ### Terminal installation(Linux only)
 
 Open a terminal and paste the following commands.
@@ -87,6 +87,7 @@ wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/ins
 ```bash
 wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/install_linux.sh && chmod +x install_linux.sh && sudo ./install_linux.sh && rm install_linux.sh && qr-generator -h
 ```
+<br>
 
 ### File hashes (SHA256)
 You can find the file hashes in the [releases section](https://github.com/coder12341/qr-tools/releases/tag/2.0)
