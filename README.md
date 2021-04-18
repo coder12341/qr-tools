@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/language-Python3-red)
 ![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 
-# [!(icon.png)] QR-Tools
+# [!](icon.png) QR-Tools
 A collection of tools to read and generate QR-Codes
 
 <br>
