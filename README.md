@@ -62,7 +62,9 @@ pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 
 
 [QR Generator cli (for Linux_amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_amd64)
+
 [QR Generator Graphical (for Linux_amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_linux_amd64.tar.xz)
+
 [QR Generator Graphical (installer for Debian based distros amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_setup_linux_amd64.deb)
 
 
