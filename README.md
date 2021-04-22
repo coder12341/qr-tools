@@ -9,6 +9,7 @@ A collection of tools to read and generate QR-Codes
 <br>
 
 ## Scan and generate qr-codes easily
+**Binaries are only available the QR-Code Generator app.**
 ### Install Required libraries
 ```
 pip3 install pyzbar imutils opencv-python Pillow qrcode wireless PyQt5 segno
