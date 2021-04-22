@@ -53,19 +53,24 @@ pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 
 ### [Download Binaries](https://github.com/coder12341/qr-tools/releases)
 
-[QR Generator cli(for Windows_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_win_x64.exe)
+[QR Generator cli(for Windows_amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_win_amd64.exe)
 
-[QR Generator Graphical(for Windows_x64_portable)](https://github.com/coder12341/qr-tools/releases/download/v2.0/QR.Generator_portable_win_x64.zip)
+[QR Generator Graphical(for Windows_amd64_portable)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_portable_win_x64.zip)
 
-[QR Generator Graphical(for Windows_x64_installer)](https://github.com/coder12341/qr-tools/releases/download/v2.0/QR.Generator.setup_win_x64.exe)
+[QR Generator Graphical(for Windows_amd64_installer)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_setup_win_amd64.exe)
 
-[QR Generator cli(for Linux_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_x64)
 
-[QR Generator Graphical(for Linux_x64)](https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_linux_x64.tar.xz)
+
+[QR Generator cli(for Linux_amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_amd64)
+
+[QR Generator Graphical(for Linux_amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_linux_amd64.tar.xz)
+[QR Generator Graphical(installer for Debian based distros amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_setup_linux_amd64.deb)
+
+
 
 [QR Generator cli(for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_rpi)
 
-[QR Generator Graphical(for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/QR.Generator_rpi.tar.gz)
+[QR Generator Graphical(for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_rpi.tar.gz)
 
 Note: **Binaries are only available the QR-Code Generator app.**
 
@@ -75,7 +80,7 @@ Note: **Binaries are only available the QR-Code Generator app.**
 
 ### Terminal installation(Linux only)
 
-Open a terminal and paste the following commands.
+To install the CLI versiob of QR-Code Generator open a terminal and paste the following commands.
 
 **Raspberry Pi**
 
