@@ -18,7 +18,7 @@ function install() {
       echo "Installing..."
       {
       cd ~/.local/share/ && mkdir qr-tools && cd qr-tools
-      wget https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_x64 -O qr-generator 
+      wget https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_amd64 -O qr-generator 
       chmod +x qr-generator
       } &> /dev/null
       echo 'export PATH=~/.local/share/qr-tools:$PATH' >> ~/.bashrc
@@ -29,7 +29,7 @@ function install() {
   sleep 10
   echo "Installing..."
   {
-  cd /bin && wget https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_x64 -O qr-generator
+  cd /bin && wget https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_amd64 -O qr-generator
   chmod +x qr-generator
   
   } &> /dev/null
