@@ -73,7 +73,10 @@ pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 
 [QR Generator Graphical (for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_rpi.tar.gz)
 
-Notes: - **Binaries are only available the QR-Code Generator app.**
+Notes: 
+
+- **Binaries are only available the QR-Code Generator app.**
+- 
 
 - **You should also have installed 'libnotify-bin' in order for the application to work properly on Linux. You can install it via your package manager.**
 
