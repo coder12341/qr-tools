@@ -2,6 +2,8 @@
 ![](https://img.shields.io/badge/license-GPLv3-blue)
 ![](https://img.shields.io/badge/language-Python3-red)
 ![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
+[![qr-tools](https://snapcraft.io/qr-tools/badge.svg)](https://snapcraft.io/qr-tools)
+[![qr-tools](https://snapcraft.io/qr-tools/trending.svg?name=0)](https://snapcraft.io/qr-tools)
 
 # ![QR-Tools](icon.png) QR-Tools
 A collection of tools to read and generate QR-Codes
@@ -98,6 +100,11 @@ wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/ins
 ```bash
 wget https://raw.githubusercontent.com/coder12341/qr-tools/website/downloads/install_linux.sh && chmod +x install_linux.sh && sudo ./install_linux.sh && rm install_linux.sh && qr-generator -h
 ```
+<br>
+
+### Extra
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/qr-tools)
+
 <br>
 
 ### File hashes (SHA256)
