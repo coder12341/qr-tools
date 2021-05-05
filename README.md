@@ -55,6 +55,8 @@ pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 
 ### [Download Binaries](https://github.com/coder12341/qr-tools/releases)
 
+**Windows amd64**
+
 [QR Generator cli (for Windows_amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_win_amd64.exe)
 
 [QR Generator Graphical (for Windows_amd64_portable)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_portable_win_x64.zip)
@@ -62,6 +64,7 @@ pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 [QR Generator Graphical (for Windows_amd64_installer)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_setup_win_amd64.exe)
 
 
+**Linux amd64**
 
 [QR Generator cli (for Linux_amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_linux_amd64)
 
@@ -70,10 +73,13 @@ pyinstaller -F --icon icon.ico [the_name_of_the_program.py]
 [QR Generator Graphical (installer for Debian based distros amd64)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_setup_linux_amd64.deb)
 
 
+**Raspberry Pi**
 
 [QR Generator cli (for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator-cli_rpi)
 
 [QR Generator Graphical (for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_rpi.tar.gz)
+
+[QR Generator Graphical (installer for Raspberry_pi_armhf)](https://github.com/coder12341/qr-tools/releases/download/2.0/qr-generator_setup_rpi.deb)
 
 Notes: 
 
