@@ -6,7 +6,8 @@
 [![qr-tools](https://snapcraft.io/qr-tools/trending.svg?name=0)](https://snapcraft.io/qr-tools)
 
 # ![QR-Tools](icon.png) QR-Tools
-A collection of tools to read and generate QR-Codes
+
+With QR-Code Generator you can create your own QR-Codes easily and for free. it supports many types of data that QR-Codes can handle and you can also create micro qr-codes!
 
 <br>
 
