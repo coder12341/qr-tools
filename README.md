@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/version-2.0-green)](https://github.com/coder12341/qr-tools/releases/tag/2.0)
 ![](https://img.shields.io/badge/license-GPLv3-blue)
-![](https://img.shields.io/badge/language-Python3-red)
+![](https://img.shields.io/badge/language-Python3.9-red)
 ![](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 [![qr-tools](https://snapcraft.io/qr-tools/badge.svg)](https://snapcraft.io/qr-tools)
 [![qr-tools](https://snapcraft.io/qr-tools/trending.svg?name=0)](https://snapcraft.io/qr-tools)
@@ -9,6 +9,10 @@
 
 With QR-Code Generator you can create your own QR-Codes easily and for free. it supports many types of data that QR-Codes can handle and you can also create micro qr-codes!
 
+<br>
+<p font-size:25px>
+  <b>The program has been tested with Python3.9. It may not work with other python versions.</b>
+</p>
 <br>
 
 ## Scan and generate qr-codes easily
