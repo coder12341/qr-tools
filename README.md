@@ -98,7 +98,7 @@ Notes:
 
 ### Terminal installation(Linux only)
 
-To install the CLI versiob of QR-Code Generator open a terminal and paste the following commands.
+To install the CLI version of QR-Code Generator open a terminal and paste the following commands.
 
 **Raspberry Pi**
 
