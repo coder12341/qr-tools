@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/language-Python3.10-red)
 ![](https://img.shields.io/badge/platform-Linux-lightgrey)
 
-# ![QR-Tools](icon.png) QR-Tools
+# ![QR-Tools](logo.png) QR-Tools
 
 ## **Development version**
 
