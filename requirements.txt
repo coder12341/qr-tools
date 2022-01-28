@@ -1,0 +1,7 @@
+pyzbar
+imutils
+opencv-python
+Pillow
+qrcode
+segno
+pygobject
