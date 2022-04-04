@@ -14,5 +14,3 @@ def main(image):
 		barcodeData = barcode.data.decode("utf-8")
 		barcodeType = barcode.type
 		return barcodeType, barcodeData
-
-#Reader.main("/home/konstantinos/generated_qr.png")

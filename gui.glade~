@@ -2721,8 +2721,6 @@ Author: coder12341
         </child>
         <child>
           <object class="GtkImage">
-            <property name="width-request">40</property>
-            <property name="height-request">40</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="halign">baseline</property>

@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/version-3.0alpha-yellow)
+![](https://img.shields.io/badge/version-3.1alpha-yellow)
 ![](https://img.shields.io/badge/license-GPLv3-blue)
 ![](https://img.shields.io/badge/language-Python3.10-red)
 ![](https://img.shields.io/badge/platform-Linux-lightgrey)

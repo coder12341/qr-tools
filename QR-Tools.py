@@ -11,6 +11,7 @@ import json
 from getpass import getuser
 from platform import system
 from datetime import datetime, date
+import re
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk, GObject
@@ -409,12 +410,11 @@ class main_win(Gtk.Window):
             self.null_data_error(self.more_info_btn, self.warning_label, self.warning_bar)
     
     def generate_sms(self, button):
-        phone_number=str(self.phone_number_data.get_value_as_int())
+        phone_number=str(int(self.phone_number_data.get_value()))  
         sms_text=self.get_buffer_text(self.sms_data)
         ctr_code=str(self.country_code_data.get_active_id())
         print(ctr_code)
         if ctr_code=="null":
-            print("hi")
             ctr_code=""
         elif ctr_code=="custom":
             ctr_code=code
@@ -736,10 +736,28 @@ class main_win(Gtk.Window):
         dialog.add_filter(filter_xbm)
 
     #QR Reader
-
+    def format_data(self, data):
+        if data.startswith("http"):
+            data="Website: <a href=\"%s\" title=\"%s\">%s</a>"%(data, data, data)
+            return data
+        elif data.startswith("MATMSG"):
+            email=data.split(':')
+            to=email[2].split(';')[0]
+            sub=email[3].split(';')[0]
+            body=email[4].split(';')[0]
+            data="Email to <a href=\"mailto:%s\" title=\"%s\">%s</a>\nSubject:%s\nBody:\n%s"%(to, to, to, sub, body)
+            return data
+        elif data.startswith("SMSTO"):
+            sms=data.split(':')
+            num=sms[1]
+            mes=sms[2]
+            data="SMS to %s\nMessage:\n%s"%(num, mes)
+            return data
+        
     def read_qr_code(self, image):
         qr_type, data=qr_reader.main(image)
-        return qr_type, data
+        fdata=self.format_data(str(data))
+        return qr_type, data, fdata
 
     def add_filters_qr_reader(self, dialog):
 
@@ -770,7 +788,10 @@ class main_win(Gtk.Window):
         if response == Gtk.ResponseType.OK:
             self.path_to_qr_code_to_read=dialog.get_filename().split("/")
             self.select_qr_code_btn.set_label(self.path_to_qr_code_to_read[len(self.path_to_qr_code_to_read)-1])
-            self.qr_type, self.data=self.read_qr_code(dialog.get_filename())
+            self.qr_type, self.data, self.fdata=self.read_qr_code(dialog.get_filename())
+            self.raw_data_out.set_text(self.data)
+            self.formatted_data_out.set_markup("Detected %s\n%s"%(self.qr_type, self.fdata))
+            #self.formatted_data_out.set_text()
             print("Type: "+self.qr_type+"\nData: "+self.data)
         elif response == Gtk.ResponseType.CANCEL:
             self.path_to_qr_code_to_read="False"

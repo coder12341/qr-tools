@@ -57,10 +57,12 @@ class Splash(Thread):
 
 
     def splash_check(self, lbl, bar, win):
-        logs_file_size=path.getsize("logs.txt")
-        if logs_file_size>3000000:
-            logs=open("logs.txt", "w")
-            logs.close() 
+        try:
+            logs_file_size=path.getsize("logs.txt")
+            if logs_file_size>3000000:
+                logs=open("logs.txt", "w")
+                logs.close() 
+        except: pass
         logs=open("logs.txt", "a")
         logs.write("\n%s\nBooting...\n"%datetime.now())
         err_count=0
