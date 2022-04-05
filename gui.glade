@@ -106,35 +106,23 @@ Author: coder12341
             <property name="can-focus">False</property>
             <property name="spacing">5</property>
             <child>
-              <placeholder/>
+              <object class="GtkModelButton" id="check_for_updates_button">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="text" translatable="yes">Check for updates</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">2</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkSeparator">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">3</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkSeparator">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">5</property>
           </packing>
         </child>
         <child>
@@ -178,7 +166,6 @@ Author: coder12341
       </object>
       <packing>
         <property name="submenu">main</property>
-        <property name="position">1</property>
       </packing>
     </child>
   </object>
@@ -190,6 +177,16 @@ Author: coder12341
     <property name="page-increment">10</property>
   </object>
   <object class="GtkTextBuffer" id="raw_data_out"/>
+  <object class="GtkAdjustment" id="start_hour_adjustment">
+    <property name="upper">23</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="start_minute_adjustment">
+    <property name="upper">59</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
   <object class="GtkWindow" id="main_window">
     <property name="width-request">800</property>
     <property name="height-request">570</property>
@@ -2943,15 +2940,5 @@ Author: coder12341</property>
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkAdjustment" id="start_hour_adjustment">
-    <property name="upper">23</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="start_minute_adjustment">
-    <property name="upper">59</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
   </object>
 </interface>
