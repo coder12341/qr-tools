@@ -56,7 +56,7 @@ Author: coder12341
   </object>
   <object class="GtkAdjustment" id="custom_country_code">
     <property name="lower">1</property>
-    <property name="upper">1000</property>
+    <property name="upper">100</property>
     <property name="step-increment">1</property>
     <property name="page-increment">10</property>
   </object>
@@ -190,16 +190,6 @@ Author: coder12341
     <property name="page-increment">10</property>
   </object>
   <object class="GtkTextBuffer" id="raw_data_out"/>
-  <object class="GtkAdjustment" id="start_hour_adjustment">
-    <property name="upper">23</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="start_minute_adjustment">
-    <property name="upper">59</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
-  </object>
   <object class="GtkWindow" id="main_window">
     <property name="width-request">800</property>
     <property name="height-request">570</property>
@@ -326,54 +316,37 @@ Author: coder12341
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkInfoBar" id="custom_country_code_bar">
+                  <object class="GtkStack" id="stack1">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="message-type">question</property>
-                    <child internal-child="action_area">
-                      <object class="GtkButtonBox">
+                    <property name="transition-duration">1000</property>
+                    <property name="transition-type">slide-left-right</property>
+                    <property name="interpolate-size">True</property>
+                    <child>
+                      <!-- n-columns=3 n-rows=3 -->
+                      <object class="GtkGrid">
+                        <property name="width-request">327</property>
+                        <property name="height-request">189</property>
+                        <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="spacing">6</property>
-                        <property name="layout-style">end</property>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <object class="GtkLabel" id="custom_country_code_status_label">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="double-buffered">False</property>
-                            <attributes>
-                              <attribute name="weight" value="bold"/>
-                            </attributes>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">0</property>
-                      </packing>
-                    </child>
-                    <child internal-child="content_area">
-                      <object class="GtkBox">
-                        <property name="can-focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="row-spacing">20</property>
+                        <property name="column-spacing">2</property>
                         <child>
                           <object class="GtkBox">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="spacing">5</property>
+                            <property name="orientation">vertical</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkRadioButton" id="url_radio_btn">
+                                <property name="label" translatable="yes">Encode URL:</property>
                                 <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="label" translatable="yes">&lt;b&gt;&lt;big&gt; + &lt;/big&gt;&lt;/b&gt;</property>
-                                <property name="use-markup">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="focus-on-click">False</property>
+                                <property name="receives-default">False</property>
+                                <property name="active">True</property>
+                                <property name="draw-indicator">True</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -382,14 +355,13 @@ Author: coder12341
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkSpinButton" id="custom_country_code_data">
+                              <object class="GtkEntry" id="url_data">
+                                <property name="width-request">287</property>
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
-                                <property name="max-length">4</property>
-                                <property name="adjustment">custom_country_code</property>
-                                <property name="numeric">True</property>
-                                <property name="update-policy">if-valid</property>
-                                <property name="value">1</property>
+                                <property name="truncate-multiline">True</property>
+                                <property name="placeholder-text" translatable="yes">https://example.com</property>
+                                <property name="input-purpose">url</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -397,93 +369,64 @@ Author: coder12341
                                 <property name="position">1</property>
                               </packing>
                             </child>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="orientation">vertical</property>
                             <child>
-                              <object class="GtkButton" id="custom_country_code_ok_btn">
-                                <property name="label">gtk-ok</property>
+                              <object class="GtkRadioButton" id="text_radio_btn">
+                                <property name="label" translatable="yes">Encode Text:</property>
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="focus-on-click">False</property>
-                                <property name="receives-default">True</property>
-                                <property name="use-stock">True</property>
+                                <property name="receives-default">False</property>
+                                <property name="draw-indicator">True</property>
+                                <property name="group">url_radio_btn</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
                                 <property name="fill">True</property>
-                                <property name="position">2</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkScrolledWindow">
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="shadow-type">in</property>
+                                <property name="propagate-natural-width">True</property>
+                                <property name="propagate-natural-height">True</property>
+                                <child>
+                                  <object class="GtkTextView" id="text_data">
+                                    <property name="width-request">287</property>
+                                    <property name="height-request">147</property>
+                                    <property name="visible">True</property>
+                                    <property name="sensitive">False</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="events">GDK_STRUCTURE_MASK | GDK_SCROLL_MASK</property>
+                                    <property name="wrap-mode">word</property>
+                                    <property name="input-hints">GTK_INPUT_HINT_SPELLCHECK | GTK_INPUT_HINT_NONE</property>
+                                    <property name="monospace">True</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">2</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkStack" id="stack1">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="transition-duration">1000</property>
-                    <property name="transition-type">slide-left-right</property>
-                    <property name="interpolate-size">True</property>
-                    <child>
-                      <object class="GtkFixed">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <child>
-                          <object class="GtkRadioButton" id="text_radio_btn">
-                            <property name="label" translatable="yes">Encode Text:</property>
-                            <property name="width-request">109</property>
-                            <property name="height-request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="focus-on-click">False</property>
-                            <property name="receives-default">False</property>
-                            <property name="active">True</property>
-                            <property name="draw-indicator">True</property>
-                            <property name="group">url_radio_btn</property>
-                          </object>
-                          <packing>
-                            <property name="x">395</property>
-                            <property name="y">28</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="url_data">
-                            <property name="width-request">287</property>
-                            <property name="height-request">34</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="truncate-multiline">True</property>
-                            <property name="placeholder-text" translatable="yes">https://example.com</property>
-                            <property name="input-purpose">url</property>
-                          </object>
-                          <packing>
-                            <property name="x">54</property>
-                            <property name="y">89</property>
+                            <property name="left-attach">2</property>
+                            <property name="top-attach">0</property>
                           </packing>
                         </child>
                         <child>
@@ -498,52 +441,27 @@ Author: coder12341
                             <property name="receives-default">True</property>
                           </object>
                           <packing>
-                            <property name="x">313</property>
-                            <property name="y">321</property>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">2</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkScrolledWindow">
-                            <property name="width-request">287</property>
-                            <property name="height-request">147</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="shadow-type">in</property>
-                            <child>
-                              <object class="GtkTextView" id="text_data">
-                                <property name="width-request">287</property>
-                                <property name="height-request">147</property>
-                                <property name="visible">True</property>
-                                <property name="sensitive">False</property>
-                                <property name="can-focus">True</property>
-                                <property name="events">GDK_STRUCTURE_MASK | GDK_SCROLL_MASK</property>
-                                <property name="wrap-mode">word</property>
-                                <property name="input-hints">GTK_INPUT_HINT_SPELLCHECK | GTK_INPUT_HINT_NONE</property>
-                                <property name="monospace">True</property>
-                              </object>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="x">428</property>
-                            <property name="y">91</property>
-                          </packing>
+                          <placeholder/>
                         </child>
                         <child>
-                          <object class="GtkRadioButton" id="url_radio_btn">
-                            <property name="label" translatable="yes">Encode URL:</property>
-                            <property name="width-request">100</property>
-                            <property name="height-request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="focus-on-click">False</property>
-                            <property name="receives-default">False</property>
-                            <property name="active">True</property>
-                            <property name="draw-indicator">True</property>
-                          </object>
-                          <packing>
-                            <property name="x">25</property>
-                            <property name="y">28</property>
-                          </packing>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
                         </child>
                       </object>
                       <packing>
@@ -552,22 +470,15 @@ Author: coder12341
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkFixed">
+                      <object class="GtkBox">
+                        <property name="width-request">145</property>
+                        <property name="height-request">163</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <child>
-                          <object class="GtkButton" id="generate2">
-                            <property name="label" translatable="yes">Generate!</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="has-default">True</property>
-                            <property name="receives-default">True</property>
-                          </object>
-                          <packing>
-                            <property name="x">340</property>
-                            <property name="y">321</property>
-                          </packing>
-                        </child>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">20</property>
                         <child>
                           <object class="GtkBox">
                             <property name="width-request">100</property>
@@ -673,8 +584,24 @@ Author: coder12341
                             </child>
                           </object>
                           <packing>
-                            <property name="x">290</property>
-                            <property name="y">59</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="generate2">
+                            <property name="label" translatable="yes">Generate!</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="has-default">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="halign">center</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
                           </packing>
                         </child>
                       </object>
@@ -685,221 +612,36 @@ Author: coder12341
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkFixed">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">13</property>
                         <child>
-                          <object class="GtkButton" id="generate3">
-                            <property name="label" translatable="yes">Generate!</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="has-default">True</property>
-                            <property name="receives-default">True</property>
-                          </object>
-                          <packing>
-                            <property name="x">361</property>
-                            <property name="y">321</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="width-request">311</property>
-                            <property name="height-request">80</property>
+                          <object class="GtkInfoBar" id="custom_country_code_bar">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="orientation">vertical</property>
-                            <property name="spacing">10</property>
-                            <child>
-                              <object class="GtkComboBoxText" id="country_code_data">
-                                <property name="visible">True</property>
+                            <property name="homogeneous">True</property>
+                            <property name="message-type">question</property>
+                            <child internal-child="action_area">
+                              <object class="GtkButtonBox">
                                 <property name="can-focus">False</property>
-                                <property name="active-id">null</property>
-                                <items>
-                                  <item id="null" translatable="yes">--</item>
-                                  <item id="213" translatable="yes">ALGERIA  +213</item>
-                                  <item id="684" translatable="yes">AMERICANSAMOA +684</item>
-                                  <item id="33" translatable="yes">ANDORRA +33</item>
-                                  <item id="54" translatable="yes">ARGENTINA +54</item>
-                                  <item id="61" translatable="yes">AUSTRAILIA +61</item>
-                                  <item id="43" translatable="yes">AUSTRIA +43</item>
-                                  <item id="973" translatable="yes">BAHRAIN +973</item>
-                                  <item id="32" translatable="yes">BELGIUM +32</item>
-                                  <item id="501" translatable="yes">BELIZE +501</item>
-                                  <item id="591" translatable="yes">BOLIVIA +591</item>
-                                  <item id="55" translatable="yes">BRAZIL +55</item>
-                                  <item id="673" translatable="yes">BRUNEI +673</item>
-                                  <item id="237" translatable="yes">CAMEROON +237</item>
-                                  <item id="56" translatable="yes">CHILE +56</item>
-                                  <item id="57" translatable="yes">COLOMBIA +57</item>
-                                  <item id="506" translatable="yes">COSTA RICA +506</item>
-                                  <item id="57" translatable="yes">CYPRUS3 +57</item>
-                                  <item id="42" translatable="yes">CZECHOLSLOVAKIA +42</item>
-                                  <item id="45" translatable="yes">DENMARK +45</item>
-                                  <item id="593" translatable="yes">ECUADOR +593</item>
-                                  <item id="20" translatable="yes">EGYPT +20</item>
-                                  <item id="503" translatable="yes">EL SALVADOR +503</item>
-                                  <item id="251" translatable="yes">ETHIOPIA +251</item>
-                                  <item id="679" translatable="yes">FIJI +679</item>
-                                  <item id="358" translatable="yes">FINLAND +358</item>
-                                  <item id="33" translatable="yes">FRANCE +33</item>
-                                  <item id="596" translatable="yes">FRENCH ANTILLES +596</item>
-                                  <item id="689" translatable="yes">FRENCHPOLYNESIA +689</item>
-                                  <item id="241" translatable="yes">GABON +241</item>
-                                  <item id="37" translatable="yes">GERMANDEMOCRATICREPUBLIC +37</item>
-                                  <item id="49" translatable="yes">GERMANY,FEDERALREPUBLICOF +49</item>
-                                  <item id="350" translatable="yes">GIBRALTAR +350</item>
-                                  <item id="30" translatable="yes">GREECE +30</item>
-                                  <item id="671" translatable="yes">GUAM +671</item>
-                                  <item id="53" translatable="yes">GUANTANAMO BAY (US NAVY BASE) +53</item>
-                                  <item id="502" translatable="yes">GUATEMALA +502</item>
-                                  <item id="592" translatable="yes">GUYANA +592</item>
-                                  <item id="509" translatable="yes">HAITI +509</item>
-                                  <item id="504" translatable="yes">HONDURAS +504</item>
-                                  <item id="852" translatable="yes">HONGKONG +852</item>
-                                  <item id="36" translatable="yes">HUNGARY +36</item>
-                                  <item id="354" translatable="yes">ICELAND +354</item>
-                                  <item id="91" translatable="yes">INDIA +91</item>
-                                  <item id="62" translatable="yes">INDONESIA +62</item>
-                                  <item id="98" translatable="yes">IRAN +98</item>
-                                  <item id="964" translatable="yes">IRAQ +964</item>
-                                  <item id="353" translatable="yes">IRELAND +353</item>
-                                  <item id="972" translatable="yes">ISRAEL +972</item>
-                                  <item id="39" translatable="yes">ITALY +39</item>
-                                  <item id="225" translatable="yes">IVORY COAST +225</item>
-                                  <item id="81" translatable="yes">JAPAN +81</item>
-                                  <item id="962" translatable="yes">JORDAN +962</item>
-                                  <item id="254" translatable="yes">KENYA +254</item>
-                                  <item id="82" translatable="yes">KOREA,REPUBLICOF +82</item>
-                                  <item id="965" translatable="yes">KUWAIT +965</item>
-                                  <item id="266" translatable="yes">LESOTHO +266</item>
-                                  <item id="231" translatable="yes">LIBERIA +231</item>
-                                  <item id="218" translatable="yes">LIBYA +218</item>
-                                  <item id="41" translatable="yes">LIECHTENSTEIN +41</item>
-                                  <item id="352" translatable="yes">LUXEMBOURG +352</item>
-                                  <item id="265" translatable="yes">MALAWI +265</item>
-                                  <item id="60" translatable="yes">MALAYSIA +60</item>
-                                  <item id="33" translatable="yes">MONACO +33</item>
-                                  <item id="212" translatable="yes">MOROCCO +212</item>
-                                  <item id="264" translatable="yes">NAMIBIA +264</item>
-                                  <item id="31" translatable="yes">NETHERLANDS +31</item>
-                                  <item id="599" translatable="yes">NETHERLANDS ANTILLES +599</item>
-                                  <item id="687" translatable="yes">NEWCALEDONIA +687</item>
-                                  <item id="64" translatable="yes">NEWZEALAND +64</item>
-                                  <item id="505" translatable="yes">NICARAGUA +505</item>
-                                  <item id="234" translatable="yes">NIGERIA +234</item>
-                                  <item id="47" translatable="yes">NORWAY +47</item>
-                                  <item id="968" translatable="yes">OMAN +968</item>
-                                  <item id="92" translatable="yes">PAKISTAN +92</item>
-                                  <item id="507" translatable="yes">PANAMA +507</item>
-                                  <item id="675" translatable="yes">PAPUANEWGUINEA +675</item>
-                                  <item id="595" translatable="yes">PARAGUAY +595</item>
-                                  <item id="51" translatable="yes">PERU +51</item>
-                                  <item id="63" translatable="yes">PHILIPPINES +63</item>
-                                  <item id="48" translatable="yes">POLAND +48</item>
-                                  <item id="351" translatable="yes">PORTUGAL +351</item>
-                                  <item id="974" translatable="yes">QATAR +974</item>
-                                  <item id="40" translatable="yes">ROMANIA +40</item>
-                                  <item id="670" translatable="yes">SAIPAN +670</item>
-                                  <item id="39" translatable="yes">SANMARINO +39</item>
-                                  <item id="966" translatable="yes">SAUDI ARABIA +966</item>
-                                  <item id="221" translatable="yes">SENEGAL +221</item>
-                                  <item id="65" translatable="yes">SINGAPORE +65</item>
-                                  <item id="27" translatable="yes">SOUTH AFRICA +27</item>
-                                  <item id="34" translatable="yes">SPAIN +34</item>
-                                  <item id="94" translatable="yes">SRI LANKA +94</item>
-                                  <item id="508" translatable="yes">ST. PIERRE AND MIQUELON +508</item>
-                                  <item id="597" translatable="yes">SURINAME +597</item>
-                                  <item id="268" translatable="yes">SWAZILAND +268</item>
-                                  <item id="46" translatable="yes">SWEDEN +46</item>
-                                  <item id="41" translatable="yes">SWITZERLAND +41</item>
-                                  <item id="886" translatable="yes">TAIWAN +886</item>
-                                  <item id="255" translatable="yes">TANZANIA +255</item>
-                                  <item id="66" translatable="yes">THAILAND +66</item>
-                                  <item id="216" translatable="yes">TUNISIA +216</item>
-                                  <item id="90" translatable="yes">TURKEY +90</item>
-                                  <item id="256" translatable="yes">UGANDA +256</item>
-                                  <item id="971" translatable="yes">UNITED ARAB EMIRATES +971</item>
-                                  <item id="44" translatable="yes">UNITED KINGDOM +44</item>
-                                  <item id="1" translatable="yes">UNITED STATES +1</item>
-                                  <item id="598" translatable="yes">URUGUAY +598</item>
-                                  <item id="39" translatable="yes">VATICANCITY +39</item>
-                                  <item id="58" translatable="yes">VENEZUELA +58</item>
-                                  <item id="967" translatable="yes">YEMEN ARAB REPUBLIC +967</item>
-                                  <item id="38" translatable="yes">YUGOSLAVIA +38</item>
-                                  <item id="260" translatable="yes">ZAMBIA +260</item>
-                                  <item id="263" translatable="yes">ZIMBABWE +263</item>
-                                  <item id="custom" translatable="yes">Custom</item>
-                                </items>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
                                 <property name="fill">False</property>
-                                <property name="position">0</property>
+                                <property name="position">1</property>
                               </packing>
                             </child>
-                            <child>
-                              <object class="GtkSpinButton" id="phone_number_data">
-                                <property name="visible">True</property>
-                                <property name="can-focus">True</property>
-                                <property name="max-length">36</property>
-                                <property name="caps-lock-warning">False</property>
-                                <property name="placeholder-text" translatable="yes">Telephone number</property>
-                                <property name="input-purpose">phone</property>
-                                <property name="adjustment">phone_number</property>
-                                <property name="numeric">True</property>
-                                <property name="update-policy">if-valid</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">2</property>
-                              </packing>
-                            </child>
-                            <child>
+                            <child internal-child="content_area">
                               <object class="GtkBox">
-                                <property name="width-request">274</property>
-                                <property name="height-request">204</property>
-                                <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="orientation">vertical</property>
-                                <property name="spacing">7</property>
                                 <child>
-                                  <object class="GtkBox">
+                                  <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="spacing">3</property>
-                                    <child>
-                                      <object class="GtkRadioButton" id="encode_sms_rdio_btn">
-                                        <property name="label" translatable="yes">Encode SMS</property>
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">True</property>
-                                        <property name="focus-on-click">False</property>
-                                        <property name="receives-default">False</property>
-                                        <property name="active">True</property>
-                                        <property name="draw-indicator">False</property>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">0</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkRadioButton" id="encode_phone_rdio_btn">
-                                        <property name="label" translatable="yes">Encode Phone Number</property>
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">True</property>
-                                        <property name="focus-on-click">False</property>
-                                        <property name="receives-default">False</property>
-                                        <property name="draw-indicator">False</property>
-                                        <property name="group">encode_sms_rdio_btn</property>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">1</property>
-                                      </packing>
-                                    </child>
+                                    <property name="label" translatable="yes">&lt;b&gt;&lt;big&gt; + &lt;/big&gt;&lt;/b&gt;</property>
+                                    <property name="use-markup">True</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -908,29 +650,318 @@ Author: coder12341
                                   </packing>
                                 </child>
                                 <child>
+                                  <object class="GtkSpinButton" id="custom_country_code_data">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="max-length">2</property>
+                                    <property name="input-purpose">digits</property>
+                                    <property name="adjustment">custom_country_code</property>
+                                    <property name="snap-to-ticks">True</property>
+                                    <property name="numeric">True</property>
+                                    <property name="update-policy">if-valid</property>
+                                    <property name="value">1</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="custom_country_code_ok_btn">
+                                    <property name="label">gtk-ok</property>
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="receives-default">True</property>
+                                    <property name="use-stock">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="custom_country_code_status_label">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="halign">end</property>
+                                    <attributes>
+                                      <attribute name="weight" value="bold"/>
+                                    </attributes>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">True</property>
+                                    <property name="fill">True</property>
+                                    <property name="pack-type">end</property>
+                                    <property name="position">3</property>
+                                  </packing>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="width-request">313</property>
+                            <property name="height-request">330</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">20</property>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="width-request">311</property>
+                                <property name="height-request">80</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <object class="GtkComboBoxText" id="country_code_data">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="active-id">null</property>
+                                    <items>
+                                      <item id="null" translatable="yes">--</item>
+                                      <item id="213" translatable="yes">ALGERIA  +213</item>
+                                      <item id="684" translatable="yes">AMERICANSAMOA +684</item>
+                                      <item id="33" translatable="yes">ANDORRA +33</item>
+                                      <item id="54" translatable="yes">ARGENTINA +54</item>
+                                      <item id="61" translatable="yes">AUSTRAILIA +61</item>
+                                      <item id="43" translatable="yes">AUSTRIA +43</item>
+                                      <item id="973" translatable="yes">BAHRAIN +973</item>
+                                      <item id="32" translatable="yes">BELGIUM +32</item>
+                                      <item id="501" translatable="yes">BELIZE +501</item>
+                                      <item id="591" translatable="yes">BOLIVIA +591</item>
+                                      <item id="55" translatable="yes">BRAZIL +55</item>
+                                      <item id="673" translatable="yes">BRUNEI +673</item>
+                                      <item id="237" translatable="yes">CAMEROON +237</item>
+                                      <item id="56" translatable="yes">CHILE +56</item>
+                                      <item id="57" translatable="yes">COLOMBIA +57</item>
+                                      <item id="506" translatable="yes">COSTA RICA +506</item>
+                                      <item id="57" translatable="yes">CYPRUS3 +57</item>
+                                      <item id="42" translatable="yes">CZECHOLSLOVAKIA +42</item>
+                                      <item id="45" translatable="yes">DENMARK +45</item>
+                                      <item id="593" translatable="yes">ECUADOR +593</item>
+                                      <item id="20" translatable="yes">EGYPT +20</item>
+                                      <item id="503" translatable="yes">EL SALVADOR +503</item>
+                                      <item id="251" translatable="yes">ETHIOPIA +251</item>
+                                      <item id="679" translatable="yes">FIJI +679</item>
+                                      <item id="358" translatable="yes">FINLAND +358</item>
+                                      <item id="33" translatable="yes">FRANCE +33</item>
+                                      <item id="596" translatable="yes">FRENCH ANTILLES +596</item>
+                                      <item id="689" translatable="yes">FRENCHPOLYNESIA +689</item>
+                                      <item id="241" translatable="yes">GABON +241</item>
+                                      <item id="37" translatable="yes">GERMANDEMOCRATICREPUBLIC +37</item>
+                                      <item id="49" translatable="yes">GERMANY,FEDERALREPUBLICOF +49</item>
+                                      <item id="350" translatable="yes">GIBRALTAR +350</item>
+                                      <item id="30" translatable="yes">GREECE +30</item>
+                                      <item id="671" translatable="yes">GUAM +671</item>
+                                      <item id="53" translatable="yes">GUANTANAMO BAY (US NAVY BASE) +53</item>
+                                      <item id="502" translatable="yes">GUATEMALA +502</item>
+                                      <item id="592" translatable="yes">GUYANA +592</item>
+                                      <item id="509" translatable="yes">HAITI +509</item>
+                                      <item id="504" translatable="yes">HONDURAS +504</item>
+                                      <item id="852" translatable="yes">HONGKONG +852</item>
+                                      <item id="36" translatable="yes">HUNGARY +36</item>
+                                      <item id="354" translatable="yes">ICELAND +354</item>
+                                      <item id="91" translatable="yes">INDIA +91</item>
+                                      <item id="62" translatable="yes">INDONESIA +62</item>
+                                      <item id="98" translatable="yes">IRAN +98</item>
+                                      <item id="964" translatable="yes">IRAQ +964</item>
+                                      <item id="353" translatable="yes">IRELAND +353</item>
+                                      <item id="972" translatable="yes">ISRAEL +972</item>
+                                      <item id="39" translatable="yes">ITALY +39</item>
+                                      <item id="225" translatable="yes">IVORY COAST +225</item>
+                                      <item id="81" translatable="yes">JAPAN +81</item>
+                                      <item id="962" translatable="yes">JORDAN +962</item>
+                                      <item id="254" translatable="yes">KENYA +254</item>
+                                      <item id="82" translatable="yes">KOREA,REPUBLICOF +82</item>
+                                      <item id="965" translatable="yes">KUWAIT +965</item>
+                                      <item id="266" translatable="yes">LESOTHO +266</item>
+                                      <item id="231" translatable="yes">LIBERIA +231</item>
+                                      <item id="218" translatable="yes">LIBYA +218</item>
+                                      <item id="41" translatable="yes">LIECHTENSTEIN +41</item>
+                                      <item id="352" translatable="yes">LUXEMBOURG +352</item>
+                                      <item id="265" translatable="yes">MALAWI +265</item>
+                                      <item id="60" translatable="yes">MALAYSIA +60</item>
+                                      <item id="33" translatable="yes">MONACO +33</item>
+                                      <item id="212" translatable="yes">MOROCCO +212</item>
+                                      <item id="264" translatable="yes">NAMIBIA +264</item>
+                                      <item id="31" translatable="yes">NETHERLANDS +31</item>
+                                      <item id="599" translatable="yes">NETHERLANDS ANTILLES +599</item>
+                                      <item id="687" translatable="yes">NEWCALEDONIA +687</item>
+                                      <item id="64" translatable="yes">NEWZEALAND +64</item>
+                                      <item id="505" translatable="yes">NICARAGUA +505</item>
+                                      <item id="234" translatable="yes">NIGERIA +234</item>
+                                      <item id="47" translatable="yes">NORWAY +47</item>
+                                      <item id="968" translatable="yes">OMAN +968</item>
+                                      <item id="92" translatable="yes">PAKISTAN +92</item>
+                                      <item id="507" translatable="yes">PANAMA +507</item>
+                                      <item id="675" translatable="yes">PAPUANEWGUINEA +675</item>
+                                      <item id="595" translatable="yes">PARAGUAY +595</item>
+                                      <item id="51" translatable="yes">PERU +51</item>
+                                      <item id="63" translatable="yes">PHILIPPINES +63</item>
+                                      <item id="48" translatable="yes">POLAND +48</item>
+                                      <item id="351" translatable="yes">PORTUGAL +351</item>
+                                      <item id="974" translatable="yes">QATAR +974</item>
+                                      <item id="40" translatable="yes">ROMANIA +40</item>
+                                      <item id="670" translatable="yes">SAIPAN +670</item>
+                                      <item id="39" translatable="yes">SANMARINO +39</item>
+                                      <item id="966" translatable="yes">SAUDI ARABIA +966</item>
+                                      <item id="221" translatable="yes">SENEGAL +221</item>
+                                      <item id="65" translatable="yes">SINGAPORE +65</item>
+                                      <item id="27" translatable="yes">SOUTH AFRICA +27</item>
+                                      <item id="34" translatable="yes">SPAIN +34</item>
+                                      <item id="94" translatable="yes">SRI LANKA +94</item>
+                                      <item id="508" translatable="yes">ST. PIERRE AND MIQUELON +508</item>
+                                      <item id="597" translatable="yes">SURINAME +597</item>
+                                      <item id="268" translatable="yes">SWAZILAND +268</item>
+                                      <item id="46" translatable="yes">SWEDEN +46</item>
+                                      <item id="41" translatable="yes">SWITZERLAND +41</item>
+                                      <item id="886" translatable="yes">TAIWAN +886</item>
+                                      <item id="255" translatable="yes">TANZANIA +255</item>
+                                      <item id="66" translatable="yes">THAILAND +66</item>
+                                      <item id="216" translatable="yes">TUNISIA +216</item>
+                                      <item id="90" translatable="yes">TURKEY +90</item>
+                                      <item id="256" translatable="yes">UGANDA +256</item>
+                                      <item id="971" translatable="yes">UNITED ARAB EMIRATES +971</item>
+                                      <item id="44" translatable="yes">UNITED KINGDOM +44</item>
+                                      <item id="1" translatable="yes">UNITED STATES +1</item>
+                                      <item id="598" translatable="yes">URUGUAY +598</item>
+                                      <item id="39" translatable="yes">VATICANCITY +39</item>
+                                      <item id="58" translatable="yes">VENEZUELA +58</item>
+                                      <item id="967" translatable="yes">YEMEN ARAB REPUBLIC +967</item>
+                                      <item id="38" translatable="yes">YUGOSLAVIA +38</item>
+                                      <item id="260" translatable="yes">ZAMBIA +260</item>
+                                      <item id="263" translatable="yes">ZIMBABWE +263</item>
+                                      <item id="custom" translatable="yes">Custom</item>
+                                    </items>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkSpinButton" id="phone_number_data">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="max-length">36</property>
+                                    <property name="text" translatable="yes">0</property>
+                                    <property name="caps-lock-warning">False</property>
+                                    <property name="placeholder-text" translatable="yes">Telephone number</property>
+                                    <property name="input-purpose">phone</property>
+                                    <property name="adjustment">phone_number</property>
+                                    <property name="numeric">True</property>
+                                    <property name="update-policy">if-valid</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
+                                <child>
                                   <object class="GtkBox">
                                     <property name="width-request">274</property>
-                                    <property name="height-request">172</property>
+                                    <property name="height-request">204</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="orientation">vertical</property>
-                                    <property name="spacing">15</property>
+                                    <property name="spacing">7</property>
                                     <child>
-                                      <object class="GtkScrolledWindow">
-                                        <property name="width-request">274</property>
-                                        <property name="height-request">123</property>
+                                      <object class="GtkBox">
                                         <property name="visible">True</property>
-                                        <property name="can-focus">True</property>
-                                        <property name="shadow-type">in</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="spacing">3</property>
                                         <child>
-                                          <object class="GtkTextView" id="sms_data">
-                                            <property name="width-request">479</property>
-                                            <property name="height-request">153</property>
+                                          <object class="GtkRadioButton" id="encode_sms_rdio_btn">
+                                            <property name="label" translatable="yes">Encode SMS</property>
                                             <property name="visible">True</property>
                                             <property name="can-focus">True</property>
-                                            <property name="resize-mode">immediate</property>
-                                            <property name="wrap-mode">word</property>
+                                            <property name="focus-on-click">False</property>
+                                            <property name="receives-default">False</property>
+                                            <property name="active">True</property>
+                                            <property name="draw-indicator">False</property>
                                           </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkRadioButton" id="encode_phone_rdio_btn">
+                                            <property name="label" translatable="yes">Encode Phone Number</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="focus-on-click">False</property>
+                                            <property name="receives-default">False</property>
+                                            <property name="draw-indicator">False</property>
+                                            <property name="group">encode_sms_rdio_btn</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">center</property>
+                                        <property name="valign">center</property>
+                                        <property name="orientation">vertical</property>
+                                        <property name="spacing">15</property>
+                                        <child>
+                                          <object class="GtkScrolledWindow">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="shadow-type">in</property>
+                                            <property name="propagate-natural-width">True</property>
+                                            <property name="propagate-natural-height">True</property>
+                                            <child>
+                                              <object class="GtkTextView" id="sms_data">
+                                                <property name="width-request">479</property>
+                                                <property name="height-request">153</property>
+                                                <property name="visible">True</property>
+                                                <property name="can-focus">True</property>
+                                                <property name="resize-mode">immediate</property>
+                                                <property name="wrap-mode">word</property>
+                                              </object>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
                                         </child>
                                       </object>
                                       <packing>
@@ -943,20 +974,36 @@ Author: coder12341
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
-                                    <property name="position">1</property>
+                                    <property name="position">3</property>
                                   </packing>
                                 </child>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
                                 <property name="fill">True</property>
-                                <property name="position">3</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="generate3">
+                                <property name="label" translatable="yes">Generate!</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="has-default">True</property>
+                                <property name="receives-default">True</property>
+                                <property name="halign">center</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
-                            <property name="x">267</property>
-                            <property name="y">5</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
                           </packing>
                         </child>
                       </object>
@@ -967,9 +1014,15 @@ Author: coder12341
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkFixed">
+                      <object class="GtkBox">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">5</property>
                         <child>
                           <object class="GtkEntry" id="email_receiver_data">
                             <property name="width-request">201</property>
@@ -979,8 +1032,9 @@ Author: coder12341
                             <property name="input-purpose">email</property>
                           </object>
                           <packing>
-                            <property name="x">313</property>
-                            <property name="y">50</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
                           </packing>
                         </child>
                         <child>
@@ -991,21 +1045,9 @@ Author: coder12341
                             <property name="placeholder-text" translatable="yes">Subject</property>
                           </object>
                           <packing>
-                            <property name="x">313</property>
-                            <property name="y">102</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkButton" id="generate4">
-                            <property name="label" translatable="yes">Generate!</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="has-default">True</property>
-                            <property name="receives-default">True</property>
-                          </object>
-                          <packing>
-                            <property name="x">361</property>
-                            <property name="y">321</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
                           </packing>
                         </child>
                         <child>
@@ -1026,8 +1068,48 @@ Author: coder12341
                             </child>
                           </object>
                           <packing>
-                            <property name="x">278</property>
-                            <property name="y">149</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">15</property>
+                            <child>
+                              <object class="GtkSeparator">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="generate4">
+                                <property name="label" translatable="yes">Generate!</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="has-default">True</property>
+                                <property name="receives-default">True</property>
+                                <property name="halign">center</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">3</property>
                           </packing>
                         </child>
                       </object>
@@ -1038,16 +1120,20 @@ Author: coder12341
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkFixed">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">20</property>
                         <child>
                           <!-- n-columns=3 n-rows=4 -->
                           <object class="GtkGrid">
-                            <property name="width-request">356</property>
-                            <property name="height-request">80</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
                             <property name="row-spacing">8</property>
                             <property name="column-spacing">8</property>
                             <child>
@@ -1184,21 +1270,27 @@ Author: coder12341
                             </child>
                           </object>
                           <packing>
-                            <property name="x">142</property>
-                            <property name="y">90</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
                           </packing>
                         </child>
                         <child>
                           <object class="GtkButton" id="generate5">
                             <property name="label" translatable="yes">Generate!</property>
+                            <property name="width-request">101</property>
+                            <property name="height-request">30</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="has-default">True</property>
                             <property name="receives-default">True</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
                           </object>
                           <packing>
-                            <property name="x">350</property>
-                            <property name="y">321</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
                           </packing>
                         </child>
                       </object>
@@ -1209,314 +1301,15 @@ Author: coder12341
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkFixed">
+                      <object class="GtkBox">
+                        <property name="width-request">100</property>
+                        <property name="height-request">80</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <child>
-                          <object class="GtkButton" id="generate6">
-                            <property name="label" translatable="yes">Generate!</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="has-default">True</property>
-                            <property name="receives-default">True</property>
-                          </object>
-                          <packing>
-                            <property name="x">352</property>
-                            <property name="y">321</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="width-request">26</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                          </object>
-                          <packing>
-                            <property name="x">773</property>
-                            <property name="y">232</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="width-request">100</property>
-                            <property name="height-request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="orientation">vertical</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="halign">start</property>
-                                <property name="label" translatable="yes">&lt;big&gt;Start date:&lt;/big&gt;</property>
-                                <property name="use-markup">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkButton" id="start_date_btn">
-                                <property name="label" translatable="yes">Set start date</property>
-                                <property name="width-request">124</property>
-                                <property name="height-request">30</property>
-                                <property name="visible">True</property>
-                                <property name="can-focus">True</property>
-                                <property name="receives-default">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="x">196</property>
-                            <property name="y">235</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="width-request">100</property>
-                            <property name="height-request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="orientation">vertical</property>
-                            <property name="baseline-position">bottom</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="halign">start</property>
-                                <property name="hexpand">True</property>
-                                <property name="label" translatable="yes">&lt;big&gt;Start time:&lt;/big&gt;</property>
-                                <property name="use-markup">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkBox">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="hexpand">False</property>
-                                <property name="spacing">5</property>
-                                <child>
-                                  <object class="GtkSpinButton" id="event_start_hour_data">
-                                    <property name="width-request">34</property>
-                                    <property name="height-request">102</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="max-length">2</property>
-                                    <property name="input-purpose">digits</property>
-                                    <property name="orientation">vertical</property>
-                                    <property name="adjustment">start_hour_adjustment</property>
-                                    <property name="climb-rate">1</property>
-                                    <property name="snap-to-ticks">True</property>
-                                    <property name="numeric">True</property>
-                                    <property name="wrap">True</property>
-                                    <property name="update-policy">if-valid</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="halign">center</property>
-                                    <property name="valign">center</property>
-                                    <property name="label" translatable="yes">:</property>
-                                    <attributes>
-                                      <attribute name="font-desc" value="Sans Bold 20"/>
-                                      <attribute name="style" value="normal"/>
-                                      <attribute name="weight" value="ultrabold"/>
-                                      <attribute name="scale" value="-1900"/>
-                                    </attributes>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkSpinButton" id="event_start_minute_data">
-                                    <property name="width-request">34</property>
-                                    <property name="height-request">102</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="orientation">vertical</property>
-                                    <property name="adjustment">start_minute_adjustment</property>
-                                    <property name="snap-to-ticks">True</property>
-                                    <property name="numeric">True</property>
-                                    <property name="wrap">True</property>
-                                    <property name="update-policy">if-valid</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="x">200</property>
-                            <property name="y">100</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="width-request">124</property>
-                            <property name="height-request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="orientation">vertical</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="halign">start</property>
-                                <property name="label" translatable="yes">&lt;big&gt;End date:&lt;/big&gt;</property>
-                                <property name="use-markup">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkButton" id="end_date_btn">
-                                <property name="label" translatable="yes">Set end date</property>
-                                <property name="width-request">124</property>
-                                <property name="visible">True</property>
-                                <property name="can-focus">True</property>
-                                <property name="receives-default">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="x">525</property>
-                            <property name="y">235</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="width-request">220</property>
-                            <property name="height-request">127</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="orientation">vertical</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="halign">start</property>
-                                <property name="label" translatable="yes">&lt;big&gt;End time:&lt;/big&gt;</property>
-                                <property name="use-markup">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkBox">
-                                <property name="width-request">0</property>
-                                <property name="height-request">0</property>
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="spacing">5</property>
-                                <child>
-                                  <object class="GtkSpinButton" id="event_end_hour_data">
-                                    <property name="width-request">34</property>
-                                    <property name="height-request">102</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="orientation">vertical</property>
-                                    <property name="adjustment">end_hour_adjustment</property>
-                                    <property name="snap-to-ticks">True</property>
-                                    <property name="numeric">True</property>
-                                    <property name="wrap">True</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">:</property>
-                                    <attributes>
-                                      <attribute name="font-desc" value="Sans Bold 20"/>
-                                      <attribute name="style" value="normal"/>
-                                      <attribute name="weight" value="ultrabold"/>
-                                      <attribute name="scale" value="-1900"/>
-                                    </attributes>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkSpinButton" id="event_end_minute_data">
-                                    <property name="width-request">34</property>
-                                    <property name="height-request">102</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="orientation">vertical</property>
-                                    <property name="adjustment">end_minute_adjustment</property>
-                                    <property name="snap-to-ticks">True</property>
-                                    <property name="numeric">True</property>
-                                    <property name="wrap">True</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="x">525</property>
-                            <property name="y">100</property>
-                          </packing>
-                        </child>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">20</property>
                         <child>
                           <object class="GtkBox">
                             <property name="width-request">168</property>
@@ -1527,8 +1320,6 @@ Author: coder12341
                             <property name="spacing">10</property>
                             <child>
                               <object class="GtkEntry" id="event_title_data">
-                                <property name="width-request">168</property>
-                                <property name="height-request">34</property>
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="placeholder-text" translatable="yes">Event Title</property>
@@ -1541,8 +1332,6 @@ Author: coder12341
                             </child>
                             <child>
                               <object class="GtkEntry" id="event_location_data">
-                                <property name="width-request">168</property>
-                                <property name="height-request">34</property>
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="primary-icon-name">find-location-symbolic</property>
@@ -1559,29 +1348,347 @@ Author: coder12341
                             </child>
                           </object>
                           <packing>
-                            <property name="x">320</property>
-                            <property name="y">23</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkScrolledWindow">
-                            <property name="width-request">100</property>
-                            <property name="height-request">80</property>
+                          <!-- n-columns=2 n-rows=1 -->
+                          <object class="GtkGrid">
                             <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="shadow-type">in</property>
+                            <property name="can-focus">False</property>
+                            <property name="column-spacing">20</property>
                             <child>
-                              <object class="GtkTextView" id="event_notes">
-                                <property name="height-request">200</property>
+                              <object class="GtkBox">
+                                <property name="width-request">100</property>
+                                <property name="height-request">80</property>
                                 <property name="visible">True</property>
-                                <property name="can-focus">True</property>
-                                <property name="wrap-mode">word</property>
+                                <property name="can-focus">False</property>
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">15</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="orientation">vertical</property>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">start</property>
+                                        <property name="hexpand">True</property>
+                                        <property name="label" translatable="yes">&lt;big&gt;Start time:&lt;/big&gt;</property>
+                                        <property name="use-markup">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">False</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="hexpand">False</property>
+                                        <property name="spacing">5</property>
+                                        <child>
+                                          <object class="GtkSpinButton" id="event_start_hour_data">
+                                            <property name="width-request">34</property>
+                                            <property name="height-request">102</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="max-length">2</property>
+                                            <property name="text" translatable="yes">0</property>
+                                            <property name="input-purpose">digits</property>
+                                            <property name="orientation">vertical</property>
+                                            <property name="adjustment">start_hour_adjustment</property>
+                                            <property name="climb-rate">1</property>
+                                            <property name="snap-to-ticks">True</property>
+                                            <property name="numeric">True</property>
+                                            <property name="wrap">True</property>
+                                            <property name="update-policy">if-valid</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="halign">center</property>
+                                            <property name="valign">center</property>
+                                            <property name="label" translatable="yes">:</property>
+                                            <attributes>
+                                              <attribute name="font-desc" value="Sans Bold 20"/>
+                                              <attribute name="style" value="normal"/>
+                                              <attribute name="weight" value="ultrabold"/>
+                                              <attribute name="scale" value="-1900"/>
+                                            </attributes>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkSpinButton" id="event_start_minute_data">
+                                            <property name="width-request">34</property>
+                                            <property name="height-request">102</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="text" translatable="yes">0</property>
+                                            <property name="orientation">vertical</property>
+                                            <property name="adjustment">start_minute_adjustment</property>
+                                            <property name="snap-to-ticks">True</property>
+                                            <property name="numeric">True</property>
+                                            <property name="wrap">True</property>
+                                            <property name="update-policy">if-valid</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">2</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="orientation">vertical</property>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">start</property>
+                                        <property name="label" translatable="yes">&lt;big&gt;Start date:&lt;/big&gt;</property>
+                                        <property name="use-markup">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkButton" id="start_date_btn">
+                                        <property name="label" translatable="yes">Set start date</property>
+                                        <property name="width-request">124</property>
+                                        <property name="height-request">30</property>
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">True</property>
+                                        <property name="receives-default">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="width-request">100</property>
+                                <property name="height-request">80</property>
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">15</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="width-request">100</property>
+                                    <property name="height-request">80</property>
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="orientation">vertical</property>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">start</property>
+                                        <property name="label" translatable="yes">&lt;big&gt;End time:&lt;/big&gt;</property>
+                                        <property name="use-markup">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="width-request">0</property>
+                                        <property name="height-request">0</property>
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="spacing">5</property>
+                                        <child>
+                                          <object class="GtkSpinButton" id="event_end_hour_data">
+                                            <property name="width-request">34</property>
+                                            <property name="height-request">102</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="text" translatable="yes">0</property>
+                                            <property name="orientation">vertical</property>
+                                            <property name="adjustment">end_hour_adjustment</property>
+                                            <property name="snap-to-ticks">True</property>
+                                            <property name="numeric">True</property>
+                                            <property name="wrap">True</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="label" translatable="yes">:</property>
+                                            <attributes>
+                                              <attribute name="font-desc" value="Sans Bold 20"/>
+                                              <attribute name="style" value="normal"/>
+                                              <attribute name="weight" value="ultrabold"/>
+                                              <attribute name="scale" value="-1900"/>
+                                            </attributes>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkSpinButton" id="event_end_minute_data">
+                                            <property name="width-request">34</property>
+                                            <property name="height-request">102</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="text" translatable="yes">0</property>
+                                            <property name="orientation">vertical</property>
+                                            <property name="adjustment">end_minute_adjustment</property>
+                                            <property name="snap-to-ticks">True</property>
+                                            <property name="numeric">True</property>
+                                            <property name="wrap">True</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">2</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="orientation">vertical</property>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">start</property>
+                                        <property name="label" translatable="yes">&lt;big&gt;End date:&lt;/big&gt;</property>
+                                        <property name="use-markup">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkButton" id="end_date_btn">
+                                        <property name="label" translatable="yes">Set end date</property>
+                                        <property name="width-request">124</property>
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">True</property>
+                                        <property name="receives-default">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">0</property>
+                              </packing>
                             </child>
                           </object>
                           <packing>
-                            <property name="x">-162</property>
-                            <property name="y">93</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="generate6">
+                            <property name="label" translatable="yes">Generate!</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="has-default">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="halign">center</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
                           </packing>
                         </child>
                       </object>
@@ -1592,21 +1699,15 @@ Author: coder12341
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkFixed">
+                      <object class="GtkBox">
+                        <property name="width-request">510</property>
+                        <property name="height-request">163</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <child>
-                          <object class="GtkButton" id="generate7">
-                            <property name="label" translatable="yes">Generate!</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="receives-default">True</property>
-                          </object>
-                          <packing>
-                            <property name="x">352</property>
-                            <property name="y">321</property>
-                          </packing>
-                        </child>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">20</property>
                         <child>
                           <!-- n-columns=2 n-rows=1 -->
                           <object class="GtkGrid">
@@ -1759,6 +1860,7 @@ Author: coder12341
                                     <property name="focus-on-click">False</property>
                                     <property name="receives-default">False</property>
                                     <property name="halign">start</property>
+                                    <property name="active">True</property>
                                     <property name="draw-indicator">True</property>
                                   </object>
                                   <packing>
@@ -1813,8 +1915,24 @@ Author: coder12341
                             </child>
                           </object>
                           <packing>
-                            <property name="x">132</property>
-                            <property name="y">91</property>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="generate7">
+                            <property name="label" translatable="yes">Generate!</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="halign">center</property>
+                            <property name="valign">end</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
                           </packing>
                         </child>
                       </object>
@@ -2764,46 +2882,6 @@ Author: coder12341
       </object>
     </child>
   </object>
-  <object class="GtkMessageDialog">
-    <property name="can-focus">False</property>
-    <property name="title" translatable="yes">QR-Tools</property>
-    <property name="destroy-with-parent">True</property>
-    <property name="icon">icon.ico</property>
-    <property name="type-hint">dialog</property>
-    <property name="transient-for">main_window</property>
-    <property name="message-type">question</property>
-    <property name="buttons">yes-no</property>
-    <property name="text" translatable="yes">&lt;b&gt;Restore default settings?&lt;/b&gt;</property>
-    <property name="use-markup">True</property>
-    <property name="secondary-text" translatable="yes">By turning this option off, the settings will be
-reseted every time you clode the app.</property>
-    <property name="secondary-use-markup">True</property>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="reset_settings">
-        <property name="can-focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox">
-            <property name="can-focus">False</property>
-            <property name="homogeneous">True</property>
-            <property name="layout-style">end</property>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-  </object>
   <object class="GtkAboutDialog" id="about_window">
     <property name="can-focus">False</property>
     <property name="window-position">center-on-parent</property>
@@ -2865,5 +2943,15 @@ Author: coder12341</property>
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkAdjustment" id="start_hour_adjustment">
+    <property name="upper">23</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="start_minute_adjustment">
+    <property name="upper">59</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
   </object>
 </interface>
