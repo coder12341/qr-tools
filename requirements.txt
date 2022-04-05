@@ -3,6 +3,5 @@ imutils
 opencv-python
 Pillow
 qrcode
-wireless
-PyQt5
 segno
+pygobject
