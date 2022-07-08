@@ -5,17 +5,22 @@
 
 # ![QR-Tools](logo.png) QR-Tools
 
-<br>
-<p font-size:25px>
-  <b>The program has been tested with Python3.9. It may not work with other python versions.</b>
-</p>
-<p>
-  <b>⚠ Version 3 currently supports only Linux!</b>
-</p>
-<br>
+## A simple, yet powerful utility to scan and generate QR-Codes
+
+## Todo
+- [ ] Port to Gtk4
+
+- [ ] Add support for scanning QR-Codes form screenshots and camera
+
+- [ ] Publish to Flathub
 
 
-## Scan and generate QR-Codes easily
+## Contribution
+
+Any help is appreciated :)
+
+## Download
+
 ### Install Required libraries
 ``` bash
 git clone https://github.com/coder12341/qr-tools.git && cd qr-tools
@@ -27,6 +32,6 @@ pip3 install -r requirements.txt
 python3 QR-Tools.py
 ```
 
-### Screenshots
+## Screenshots
 ![](/images/screenshot1.png)
 ![](/images/screenshot2.png)
