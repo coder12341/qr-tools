@@ -1,0 +1,5 @@
+qr-tools/
+/logs.txt
+/*.cmb
+/*~
+__pycache__/

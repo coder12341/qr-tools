@@ -779,13 +779,17 @@ class main_win(Gtk.Window):
 
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
-            self.path_to_qr_code_to_read=dialog.get_filename().split("/")
-            self.select_qr_code_btn.set_label(self.path_to_qr_code_to_read[len(self.path_to_qr_code_to_read)-1])
-            self.qr_type, self.data, self.fdata=self.read_qr_code(dialog.get_filename())
-            self.raw_data_out.set_text(self.data)
-            self.formatted_data_out.set_markup("Detected %s\n%s"%(self.qr_type, self.fdata))
-            #self.formatted_data_out.set_text()
-            print("Type: "+self.qr_type+"\nData: "+self.data)
+            try:
+                self.path_to_qr_code_to_read=dialog.get_filename().split("/")
+                self.select_qr_code_btn.set_label(self.path_to_qr_code_to_read[len(self.path_to_qr_code_to_read)-1])
+                self.qr_type, self.data, self.fdata=self.read_qr_code(dialog.get_filename())
+                self.raw_data_out.set_text(self.data)
+                self.formatted_data_out.set_markup("Detected %s\n%s"%(self.qr_type, self.fdata))
+                #self.formatted_data_out.set_text()
+                print("Type: "+self.qr_type+"\nData: "+self.data)
+            except TypeError:
+                dialog.destroy()
+                self.raw_data_out.set_text("No QR-Code detected!")
         elif response == Gtk.ResponseType.CANCEL:
             self.path_to_qr_code_to_read="False"
 

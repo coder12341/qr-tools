@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.38.2 
+<!-- Generated with glade 3.40.0 
 
 Copyright (C) coder12341
 
@@ -2129,6 +2129,27 @@ Author: coder12341
                       <packing>
                         <property name="name">Read from file</property>
                         <property name="title" translatable="yes">Read from file</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">Read from screenshot</property>
+                        <property name="title" translatable="yes">Read from screenshot</property>
+                        <property name="position">1</property>
                       </packing>
                     </child>
                   </object>
